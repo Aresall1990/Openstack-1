@@ -69,10 +69,11 @@ Usage
 	server=puppetmaster```
 12. ```# puppet agent --server puppetmaster -t  ```
 
-    The above(step 12) command will send a certificate sign request to master. Sign that certification for each node using following command:
+    
+    The above(step 12) command will send a certificate sign request to master.
+    Sign that certification for each node using following command:
     ``` # puppet cert --sign --all ```
 
-    Now again repeat step 12 on the individual nodes, it will install the correspoding modules and dependencies on the given node
+    Now again repeat step 12 on the individual nodes, it will install the
+    correspoding modules and dependencies on the given node
 
-
-    
