@@ -1,0 +1,52 @@
+{
+  "name": "puppetlabs-haproxy",
+  "version": "0.4.1",
+  "summary": "Haproxy Module",
+  "author": "Puppet Labs",
+  "description": "An Haproxy module for Redhat family OSes using Storeconfigs",
+  "dependencies": [
+    {
+      "name": "puppetlabs/concat",
+      "version_requirement": "\u003e\u003d 1.0.0"
+    }
+  ],
+  "types": [],
+  "checksums": {
+    ".bundle/config": "7f1c988748783d2a8d455376eed1470c",
+    ".fixtures.yml": "6969654be36965f03ae229c324759513",
+    ".forge-release/pom.xml": "c650a84961ad88de03192e23b63b3549",
+    ".forge-release/publish": "1c1d6dd64ef52246db485eb5459aa941",
+    ".forge-release/settings.xml": "06d768a57d582fe1ee078b563427e750",
+    ".forge-release/validate": "7fffde8112f42a1ec986d49ba80ac219",
+    ".gemfile": "cdc1b5cdf76da9627e7dd0b843b26cd6",
+    ".travis.yml": "739c09a9ee32a9b7f668e6e243a69096",
+    "CHANGELOG": "2b8236bdea552606030bcb019e9e6a4f",
+    "Gemfile": "a25ee68d266f452c3cf19537736e778d",
+    "Gemfile.lock": "839713b09e1dbe94cf0ae1b009b247d9",
+    "Modulefile": "c3588e6c4a1d046ecaa048fb1fee61c9",
+    "README.md": "9dc9c07410412f90ec0d319ca4bb2749",
+    "Rakefile": "0254db5d3fc38c67a2c160d7296a24f8",
+    "manifests/backend.pp": "4db23e097abe2887830d7f8e75bbe6e3",
+    "manifests/balancermember.pp": "68f8036327d15baa0893e48cd5985875",
+    "manifests/frontend.pp": "4e2d2bcb6eec98eab6a5c00d282dc666",
+    "manifests/init.pp": "08ab8cd09738819d69baaf6f8bf06e3a",
+    "manifests/listen.pp": "311b41de597b624840e1977f263991ce",
+    "manifests/params.pp": "ebf3a54ee697d8a3099b8fdec711703d",
+    "spec/classes/haproxy_spec.rb": "2d7b14684860ae44c20f3f5fbebdc6ab",
+    "spec/defines/backend_spec.rb": "2e0cdcb13ade392b6ca15eb0a6b6a505",
+    "spec/defines/balancermember_spec.rb": "a9fdb58161736c84e8439fbf1d11ead0",
+    "spec/defines/frontend_spec.rb": "00f7fae8dde503b2d47c11ddc2e89c71",
+    "spec/defines/listen_spec.rb": "2bb035de93fc4297bd6615d63eda5ba4",
+    "spec/spec.opts": "a600ded995d948e393fbe2320ba8e51c",
+    "spec/spec_helper.rb": "0db89c9a486df193c0e40095422e19dc",
+    "templates/haproxy-base.cfg.erb": "f9c436fe64e4e46070ff65ad2909471c",
+    "templates/haproxy_backend_block.erb": "39b0802eab7239027e671a7cbcd76dbd",
+    "templates/haproxy_balancermember.erb": "5a8f8a56ef42b17ab536671b033e47c4",
+    "templates/haproxy_frontend_block.erb": "d8047cf31cc974492408d129e4866474",
+    "templates/haproxy_listen_block.erb": "170bc82acf64ba1472ebdce727df2c34",
+    "tests/init.pp": "3fbdb231c277bc1295d42e1869b3d49d"
+  },
+  "source": "git://github.com/puppetlabs/puppetlabs-haproxy",
+  "project_page": "http://github.com/puppetlabs/puppetlabs-haproxy",
+  "license": "Apache License, Version 2.0"
+}

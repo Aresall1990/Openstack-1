@@ -1,0 +1,6 @@
+bind-address=192.168.220.41
+wsrep_provider=/usr/lib/galera/libgalera_smm.so
+wsrep_cluster_name="controller_cluster"
+wsrep_cluster_address="gcomm://"
+wsrep_sst_method=rsync
+wsrep_sst_auth=wsrep_user:wsrep_password

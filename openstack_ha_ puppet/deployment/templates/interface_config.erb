@@ -1,0 +1,58 @@
+# The loopback network interface
+auto lo
+iface lo inet loopback
+
+# The primary network interface
+auto eth0
+iface eth0 inet static
+address <%= ipaddress %>
+netmask <%= netmask %>
+
+#broadcast <%= @broadcast %>
+gateway  <%= @gateway %>
+# dns-* options are implemented by the resolvconf package, if installed
+dns-nameservers <%= @dns_nameservers %>
+dns-search dmz-pod2.lab
+
+<% if virtual == 'virtualbox' %>
+auto eth1
+iface eth1 inet dhcp
+<% end %>
+
+
+
+<%# bridge configuration for control nodes and compute nodes #%>
+<% if @hostname["control"] or @hostname["compute"] %>
+# Public Network: Bridged Interface
+<% if virtual == 'virtualbox' %>
+auto eth2
+iface eth2 inet manual
+	up ifconfig $IFACE 0.0.0.0 up
+	up ip link set $IFACE promisc on
+	down ifconfig $IFACE 0.0.0.0 down
+<% elsif virtual == 'physical' %>
+auto eth1
+iface eth1 inet manual
+	up ifconfig $IFACE 0.0.0.0 up
+	up ip link set $IFACE promisc on
+	down ifconfig $IFACE 0.0.0.0 down
+<% end %>
+<% end %>
+
+<%# bridge configuration for swift nodes and swift proxy nodes #%>
+<% if @hostname["swift"] %>
+# Storage Network
+
+<% if virtual == 'virtualbox' %>
+auto eth1.222
+iface eth1.222 inet static
+        address <%= ipaddress %>
+	netmask <%= netmask %>
+<% elsif virtual == 'physical' %>
+auto eth0.222
+iface eth0.222 inet static
+        address <%= ipaddress %>
+	netmask <%= netmask %>
+
+<% end %>
+<% end %>

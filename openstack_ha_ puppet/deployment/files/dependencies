@@ -1,0 +1,25 @@
+#dependeicies
+
+puppet-keepalive https://github.com/CiscoSystems/puppet-keepalived/tree/havana
+puppet-ntp
+puppet-haproxy https://github.com/CiscoSystems/puppet-haproxy
+puppet-galera https://github.com/CiscoSystems/puppet-galera.git
+
+
+
+for host not matching error
+http://docs.puppetlabs.com/guides/troubleshooting.html#agents-are-failing-with-a-hostname-was-not-match-with-the-server-certificate-error-whats-wrong
+
+I have encountered one of the issues you had.
+
+(/File[/var/lib/puppet/lib]) Failed to generate additional resources using 'eval_generate: SSL_connect returned=1 errno=0 state=SSLv3 read server certificate B: certificate verify failed. This is often because the time is out of sync on the server or client
+
+After removing the ssl directory and regenerate the cert, we have passed the key matching issue. But above error occurred due to the master and agent's ntp setting that is not being synchronized. just do the following on your agent:
+
+ntpd -q [IP address of your master]
+ntpdate [IP address of your master]
+
+it is provided that your master has the right ntp settings. then, do
+
+puppetd --waitforce 60 --test --server [IP address or hostname of your master]
+

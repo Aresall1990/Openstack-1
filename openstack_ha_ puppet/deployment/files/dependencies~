@@ -1,0 +1,6 @@
+#dependeicies
+
+puppet-keepalive https://github.com/CiscoSystems/puppet-keepalived/tree/havana
+puppet-ntp
+puppet-haproxy https://github.com/CiscoSystems/puppet-haproxy
+puppet-galera https://github.com/CiscoSystems/puppet-galera.git
