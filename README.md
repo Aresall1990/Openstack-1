@@ -62,12 +62,13 @@ Usage
 9. ```apt-get update && apt-get dist-upgrade -y```
 10. ```apt-get install -y puppet```
 11.  ```vim /etc/puppet/puppet.conf```
-```	
-    pluginsync=true
-	reports=true
-	certname=control01 # hostname of the node
-	server=puppetmaster```
-12. ```# puppet agent --server puppetmaster -t  ```
+```
+pluginsync=true
+reports=true
+certname=control01 # hostname of the node
+server=puppetmaster
+```
+12. ```# puppet agent --server puppetmaster -t```
 
     
     The above(step 12) command will send a certificate sign request to master.
